@@ -1,6 +1,8 @@
 # TodoMVC
 A simple implementation of TodoMVC for web programming course in Tongji Univ, using pure native JavaScript.
 
+亮点说明：
+
 **1、数据驱动以及diff渲染**
 不同于课程材料给出的每次都将List的innerHTML置空，重新根据数据进行渲染，我在每次需要更新视图层的时候将视图层上的已有元素和数据进行比较，找到diff对需要删除的DOM节点卸载、对需要添加的进行添加、对需要修改完成状态的进行修改。通过这种方式减少DOM树的变动提高性能，同时不影响css中的animation效果的实现。
 
@@ -28,7 +30,8 @@ A simple implementation of TodoMVC for web programming course in Tongji Univ, us
 **9、全CSS实现**
 未引入图片资源，部分icon通过iconfont的css样式引入，Todos标题样式通过纯CSS实现，而非引入图片资源，性能更好。
 
-数据持久化通过LocalStorage实现。线上地址：https://www.techevan.wang/TodoMVC/TodoMVC.html，二维码如下所示：
+数据持久化通过LocalStorage实现。线上地址：https://www.techevan.wang/TodoMVC/TodoMVC.html
+二维码如下所示：
 
 <img src='https://www.techevan.wang/TodoMVC/TodoMVC.png'/>
 
