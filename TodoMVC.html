@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>TodoMVC</title>
+        <link rel="stylesheet" href="iconfont.css">
+        <link rel="stylesheet" href="styles.css">
+        <meta content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1" name="viewport"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </header>
+    <body>
+        <div id='editPanel' class="hiddenTotal">
+            <div class="controlItem">
+                <textarea id="editTextarea" class="editTextarea" rows='3'></textarea>
+                <div class="editPanelTime">
+                    <span>Created at</span>
+                    <span id="editPanelTime"></span>
+                </div>
+            </div>
+            <div class='controlItem' id="completeItem"><span class="iconfont"></span><span></span></span></div>
+            <div class='controlItem' id="deleteItem"><span class="iconfont icon-deletetext"></span>Delete</div>
+            <div class='controlItem' id="closeEditPanel"><span class="iconfont icon-close"></span>Close</div>
+        </div>
+        <div id='controlPanel' class="hiddenTotal">
+            <div class='controlItem' id="completeAll"><span class="iconfont icon-check"></span>Complete All</div>
+            <div class='controlItem' id="undoAll"><span class="iconfont icon-quxiao"></span>Undo All</div>
+            <div class='controlItem' id="deleteCompleted"><span class="iconfont icon-deletetext"></span>Delete Completed Items</div>
+            <div class='controlItem'>
+                <div><span class="iconfont icon-pifu"></span>Color</div>
+                <div id="colorSeletor"></div>
+            </div>
+            <div class='controlItem'>
+                <div><span class="iconfont icon-fangdajing-copy"></span>Search</div>
+                <input id="searchBlock" class="search"></input>
+            </div>
+            <div class='controlItem' id="closeControlPanel"><span class="iconfont icon-close"></span>Close</div>
+        </div>
+
+        <div class="title" id="title">Todos</div>
+        <div class="block">
+            <div style="text-align:center">
+                <input id="inputBlock" class="input"></input>
+            </div>
+            <div id="list"></div>
+            <div id="buttonArea">
+                <div id="showAll" class="selectButton">All</div>
+                <div id="showDone" class="selectButton">Done</div>
+                <div id="showProcess" class="selectButton">Process</div>
+                <div id="showSearchResult" class="selectButton">Result</div>
+                <div id="menu" class="selectButton">Menu</div>
+            </div>
+        </div>
+        <script src="TodoMVC.js"></script>
+    </body>
+</html>

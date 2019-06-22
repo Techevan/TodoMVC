@@ -1,0 +1,463 @@
+
+body{
+    background-color: #f0f0f0;
+}
+
+.block {
+    position: relative;
+    display: block;
+    width: 95%;
+    margin: 20px auto auto auto;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+.block:before {
+    z-index: -1;
+    transform: scale(0.96) translate(0, 10px);
+}
+
+.block:after {
+    z-index: -2;
+    transform: scale(0.92) translate(0, 20px);
+}
+
+.block:before, .block:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 50px;
+    content: "";
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+}
+
+.input {
+    width: 80%;
+    margin:auto;
+    padding: 0 20px;
+    line-height: 50px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    outline: 0;
+    transition: all 0.3s ease;
+}
+
+.input:focus, .input:active{
+    border-color: #cccccc;
+}
+
+.inputInvalid{
+    background-color: #FEDFE1;
+    border: 1px solid lightcoral;
+    color:red;
+    border-bottom-width: 3px;
+}
+
+.search {
+    width: 80%;
+    margin:auto;
+    padding: 0 20px;
+    line-height: 50px;
+    font-size: 28px;
+    vertical-align: middle;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    outline: 0;
+    transition: all 0.3s ease;
+}
+
+.search:focus, .search:active{
+    border-color: #cccccc;
+}
+
+.inputInvalid{
+    background-color: #FEDFE1;
+    border: 1px solid lightcoral;
+    color:red;
+    border-bottom-width: 3px;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: bold;
+    color: #ffffff;
+    transform: skew(-2deg, -2deg) rotate(2deg);
+    transform-origin: center center;
+    text-shadow: 1px 1px #878787,
+                 2px 2px #878787,
+                 3px 3px #878787,
+                 4px 4px #878787,
+                 5px 5px #878787,
+                 6px 6px #878787,
+                 7px 7px #878787,
+                 8px 8px #545454,
+                 9px 9px #545454,
+                 10px 10px #545454,
+                 11px 11px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    margin:30px 0 30px 0;
+}
+
+#list{
+    margin-top:20px;
+}
+
+#list :last-child{
+    border-bottom: solid 1px #f8f8f8;
+}
+
+#list .item{
+    border-top: solid 1px #f8f8f8;
+}
+
+.itemInner{
+    padding:0 20px;
+    height:36px;
+    vertical-align: middle;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.deleteBtn{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    color:#878787;
+    outline: none;
+    cursor: pointer;
+    background-color: #fafafa;
+    border: solid 1px #f8f8f8;
+    position: absolute;
+    right: 15px;
+    display: inline-block;
+    transition: all ease 0.3s;
+}
+
+.deleteBtn:hover, .deleteBtn:active, .deleteBtn:focus{
+    background-color: #f0f0f0;
+    outline:none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.content{
+    width:-webkit-calc(100% - 40px);
+    display: inline-block;
+    font-size: 14px;
+    color:#887878;
+    vertical-align: middle;
+    line-height: 36px;
+    text-decoration: none;
+    transition: color ease 0.5s;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.complete{
+    text-decoration: #eaeaea line-through;
+    color:#dadada;
+}
+
+#buttonArea{   
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.selectButton{
+    font-size: 12px;
+    color:#a0a0a0;
+    display: inline-block;
+    margin:0 5px;
+    transition: all ease 0.3s;
+}
+
+.selectButtonActive{
+    color:#434343;
+    text-decoration: underline #a0a0a0;
+}
+
+#controlPanel{
+    position: fixed; 
+    bottom:0;
+    left:0;
+    right:0; 
+    width:100%; 
+    background: white; 
+    border-radius: 10px 10px 0 0;
+    z-index:99; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+#editPanel{
+    position: fixed; 
+    top:0;
+    left:0;
+    right:0; 
+    width:100%; 
+    background: white; 
+    border-radius: 0 0 10px 10px;
+    z-index:99; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+#searchBlock{
+    margin:  15px 0;
+}
+
+/*
+#controlPanel::after{
+    content: '×';
+    position: absolute;
+    bottom:-24px;
+    left:50%;
+    transform: translate(-24px,0);
+    line-height: 48px;
+    vertical-align: middle;
+    font-size: 20px;
+    text-align: center;
+    width:48px;
+    height:48px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color:#878787;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+*/
+
+.hidden{
+    visibility: hidden;
+}
+
+.hiddenTotal{
+    display: none;
+}
+
+.controlItem{
+    padding:20px 20px;
+    font-size: 14px;
+    color:#878787;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.controlItem .iconfont{
+    padding-right: 10px;
+}
+
+.colorSelector{
+    margin:0 5px;
+    display: inline-block;
+}
+
+#colorSeletor{
+    margin-top: 15px;
+}
+
+.editTextarea{
+    outline: none;
+    resize: none;
+    width: -webkit-calc(100% - 25px);
+    border: solid 1px #f0f0f0;
+    transition: all ease 0.5s;
+    font-size: 24px;
+    line-height: 150%;
+    vertical-align: middle;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif
+}
+.editTextarea:hover{
+    border: solid 1px #878787;
+}
+
+.editPanelTime{
+    font-size: 10px;
+    color:#878787;
+    padding: 10px 5px 0 5px;
+}
+
+
+/*
+ * Animation  
+ */
+ 
+@keyframes slideInDown {
+    from {
+      transform: translate3d(0, -100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+}
+  
+.slideInDown {
+    animation-name: slideInDown;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+}
+    
+@keyframes slideOutUp {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      transform: translate3d(0, -100%, 0);
+    }
+}
+  
+.slideOutUp {
+    animation-name: slideOutUp;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+}
+
+@keyframes slideInUp {
+    from {
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+    }
+  
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+}
+  
+.slideInUp {
+    animation-name: slideInUp;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+}
+  
+
+@keyframes slideOutDown {
+    from {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    to {
+      visibility: hidden;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+}
+  
+.slideOutDown {
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    animation-name: slideOutDown;
+}
+
+@keyframes shake {
+    from,
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translate3d(10px, 0, 0);
+    }
+}
+  
+.shake {
+    animation-name: shake;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+
+@keyframes flipInY {
+    from {
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+  
+    40% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+  
+    60% {
+      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      opacity: 1;
+    }
+  
+    80% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+  
+    to {
+      transform: perspective(400px);
+    }
+}
+  
+.flipInY {
+    backface-visibility: visible !important;
+    animation-name: flipInY;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 50%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+}
+  
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
+
+    
+@keyframes fadeOutUp {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      transform: translate3d(0, -100%, 0);
+    }
+}
+  
+.fadeOutUp {
+    animation-name: fadeOutUp;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+}
