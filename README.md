@@ -17,6 +17,7 @@ A simple implementation of TodoMVC for web programming course in Tongji Univ, us
 
 **1、数据驱动以及diff渲染**
 不同于课程材料给出的每次都将List的innerHTML置空，重新根据数据进行渲染，我在每次需要更新视图层的时候将视图层上的已有元素和数据进行比较，找到diff对需要删除的DOM节点卸载、对需要添加的进行添加、对需要修改完成状态的进行修改。通过这种方式减少DOM树的变动提高性能，同时不影响css中的animation效果的实现。
+M层参考JavaScript代码中的itemOp，V层参考JavaScript代码中的element。
 
 **2、手势滑动的交互方式**
 通过监听触摸点的变化判断手势，完成项目左滑切换完成/未完成状态、右滑删除项目、监听长按唤出详情菜单等功能。
@@ -48,3 +49,5 @@ A simple implementation of TodoMVC for web programming course in Tongji Univ, us
 <img src='https://www.techevan.wang/TodoMVC/TodoMVC.png'/>
 
 *说明：iOS Safari内核下，viewPort无法禁用双指缩放页面、text-decoration-style:line-through不生效，建议在Android手机使用微信X5内核浏览器或Chrome、Firefox获取最好体验*
+
+展望：时间不够了，其实已经写好了基本的服务端（SMS登录验证和数据同步），数据用Redis、服务端逻辑用NodeJS；另外申请了科大讯飞的语音接口，本来也想接入语音的接口的，没时间做了。（理想还是要有的）
