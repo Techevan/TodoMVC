@@ -1,6 +1,18 @@
 # TodoMVC
 A simple implementation of TodoMVC for web programming course in Tongji Univ, using pure native JavaScript.
 
+**JavaScript的部分是纯手撸的没有引入框架！**
+
+**JavaScript的部分是纯手撸的没有引入框架！**
+
+**JavaScript的部分是纯手撸的没有引入框架！**
+
+**CSS的部分（除了icon）是纯手撸的没有引入框架！**
+
+**CSS的部分（除了icon）是纯手撸的没有引入框架！**
+
+**CSS的部分（除了icon）是纯手撸的没有引入框架！**
+
 亮点说明：
 
 **1、数据驱动以及diff渲染**
